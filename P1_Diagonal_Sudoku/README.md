@@ -15,3 +15,4 @@ After the board is solved, the program visualizes the history of the number plac
 
 ## Results
 
+An animation of the solution for a sample Sudoku board can be viewed [here](sudoku_anim.mp4).
