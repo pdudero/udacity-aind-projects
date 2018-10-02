@@ -21,12 +21,12 @@ A description of the files in this repository follows:
 Notes | File | Usage
 -- |  --- | ---
 [2] | [isolation/isolation.py](isolation/isolation.py) | Provides the Board class |
-[1] | [game_agent.py](game_agent.py) | My implementation of the Minimax and AlphaBeta algorithms |
+[1] | [game_agent.py](game_agent.py) | My implementation of the Minimax and Alpha-Beta algorithms |
 [1] | [play1game.py](play1game.py) | My implementation of a single game execution for debugging |
 [2] | [sample_players.py](sample_players.py) | provides sample player classes and eval functions for tournament.py |
 [2] | [tournament.py](tournament.py) | pits the various players against each other over many games for heuristic evaluation |
-[1] | [heuristic_analysis.pdf](heuristic_analysis.pdf) | Student analysis comparing performance of the three algorithms |
-[1] | [research_review.pdf](research_review.pdf) | Student summary of research paper on Deep Blue (ref. within) |
+[1] | [heuristic_analysis.pdf](heuristic_analysis.pdf) | My analysis comparing performance of the three algorithms |
+[1] | [research_review.pdf](research_review.pdf) | My summary of research paper on Deep Blue (ref. contained within) |
 
 - [1] Implemented by the student using supplied sample/skeleton code
 - [2] Supplied
@@ -34,3 +34,4 @@ Notes | File | Usage
 
 ## Results
 
+A detailed description of the results is contained in [heuristic_analysis.pdf](heuristic_analysis.pdf). In summary, no significant difference (statistically speaking) was found between the different evaluation functions over as many as 1000 games. However, a substantial difference was found between agents that implemented the Alpha-Beta pruning and those that did not.
