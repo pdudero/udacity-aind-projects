@@ -3,13 +3,13 @@ Udacity's README file is duplicated [here](README_Udacity.md).
 
 ## Method
 
-The main goal of this project was to learn AI planning concepts by implementing a logistics planning system in the air cargo domain, in which three types of objects are relevant: planes, airports, and cargo. Concepts covered include...
+The main goal of this project was to learn AI planning concepts by implementing a logistics planning system in the air cargo domain, in which three types of objects are relevant: planes, airports, and cargo. Concepts covered include various search algorithms, experimenting with different heuristic functions, and planning graphs.
 
 Three problems were defined with initial and goal states; the completion of the problem was defined as reaching the goal of having the cargos unloaded at their destination airports:
 
 1. 2 each of planes (P1,P2), airports (JFK,SFO) and cargo (C1,C2)
 1. 3 each of planes (P1,P2,P3), airports (JFK,SFO,ATL) and cargo (C1,C2,C3)
-1. 2 each of planes (P1,P2), 4 each of airports (JFK,SFO,ATL,ORD) and cargo(C1,C2,C3,C4)
+1. 2 planes (P1,P2), 4 each of airports (JFK,SFO,ATL,ORD) and cargo(C1,C2,C3,C4)
 
 Each of these problems was to be solved using several search algorithms and heuristics, divided as follows. First, a collection of so-called "uninformed" search algorithms:
 
@@ -50,4 +50,9 @@ Notes | File | Usage
 
 ## Results
 
-A detailed description of the results is contained in [heuristic_analysis.pdf](heuristic_analysis.pdf).
+A detailed description of the results, including tables and graphs, is contained in [heuristic_analysis.pdf](heuristic_analysis.pdf). The "executive summary" is as follows:
+
+1. Most of the algorithms could find optimal solutions, but with widely varying efficiencies.
+1. The number of "node expansions" during the tree search was a pretty accurate predictor of the total execution time, and the informed (heuristic) searches were best at limiting the number of node expansions, particularly as the problem got more complex.
+1. The notable exception to this rule of thumb was the "levelsum" heuristic for the planning graph solver. Creating a new planning graph at each node more than offset the efficient search, meaning that the execution time was worse even than several uninformed searches.
+
