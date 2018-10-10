@@ -7,8 +7,13 @@ A description of the files in this repository follows:
 
 Notes | File | Usage
 --- |  --- | ---
-[2] | [aimacode/logic.py](aimacode/logic.py) | base class "KB" (knowledge base of logical expressions), derived classes, and logic operations 
-[1] | [my_air_cargo_problems.py](my_air_cargo_problems.py) | class AirCargoProblem derived from base class Problem, contains state information for planes, airports and cargo, and a list of all possible actions (e.g., Load cargo C1 on plane P1 at airport A1) 
+[2] | [asl_data.py](asl_data.py) | Provides classes and utility functions that read csv files from the [data](data) folder using [pandas](https://pandas.pydata.org/) and formats it in a manner suitable for use with the [hmmlearn](https://hmmlearn.readthedocs.io/) library 
+[2] | [asl_test_model_selectors.py](asl_test_model_selectors.py) | 
+[2] | [asl_test_recognizer.py](asl_test_recognizer.py) | 
+[2] | [asl_utils.py](asl_utils.py) | 
+[1] | [my_model_selectors.py](my_model_selectors.py) | 
+[1] | [my_recognizer.py](my_recognizer.py) | 
+[1] | [asl_recognizer.ipynb](asl_recognizer.ipynb) | 
 
 - [1] Implemented by the student using supplied sample/skeleton code
 - [2] Supplied
