@@ -33,7 +33,7 @@ The model with the best score is determined for the given word. Five such words 
 
 ### Part 3
 
-Optimal models are determined for all words in the training set. The student implements the "recognize" function in [my_recognizer.py](my_recognizer.py), which collects the best guess word and associated probabilities for every sequence of x/y coordinates in a test set of sentences. Multiple combinations of Selector type and feature set are tested; three of them are documented in the notebook.  A Word Error Rate (WER) for each combination. Conclusions are drawn.
+Optimal models are determined for all words in the training set. The student implements the "recognize" function in [my_recognizer.py](my_recognizer.py), which collects the best guess word and associated probabilities for every sequence of x/y coordinates in a test set of sentences. Multiple combinations of Selector type and feature set are tested; three of them are documented in the notebook.  A Word Error Rate (WER) for each combination is calculated. Conclusions are drawn.
 
 A description of the files in this repository follows:
 
