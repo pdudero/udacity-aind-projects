@@ -14,21 +14,26 @@ The best place to start understanding the structures of the code and the data, i
 ### Part 1
 The student is familiarized with the data files in the [data](data) folder and the classes used in the code to load them in. 
 
-The student also derives additional features for later testing.
+The student also derives additional features for later testing. These are the feature sets I derived:
+
+- _features_custom_n2g_: x/y coordinates with origin shifted to the signer's nose ("ground"), and [normalized](https://en.wikipedia.org/wiki/Standard_score)
+- _features_custom_pn2g_: Same as "n2g" but in polar coordinates
+- _features_custom_dn2g_: The delta between successive frames for the "n2g" numbers is taken
+- _features_custom_n2g_dn2g_: The "n2g" and "dn2g" feature sets are combined
 
 ### Part 2
 
-Students are shown how to use the hmmlearn library "GaussianHMM" class. Students then implement the Selector* classes in [my_model_selectors.py](my_model_selectors.py), particularly the "select" method. For a given word this method runs through each possible number of states, instantiates a GaussianHMM object according that number, and performs a fit on the selected features (i.e. the HMM is trained). The model is subsequently scored based on a criterion. Three Selector classes implement three different criteria:
+The student is shown how to use the hmmlearn library "GaussianHMM" class. The student then implements the Selector* classes in [my_model_selectors.py](my_model_selectors.py), particularly the "select" method. For a given word this method runs through each possible number of states, instantiates a GaussianHMM object according that number, and performs a fit on the selected features (i.e. the HMM is trained). The model is subsequently scored based on a criterion. Three Selector classes implement three different criteria:
 
 1. CV: Log likehood with [k-fold cross-validation](https://en.wikipedia.org/wiki/Cross-validation_(statistics)#k-fold_cross-validation)
 1. BIC: [Bayesian Information Criterion](https://en.wikipedia.org/wiki/Bayesian_information_criterion)
 1. DIC: [Discriminative Information Criterion](https://pdfs.semanticscholar.org/ed3d/7c4a5f607201f3848d4c02dd9ba17c791fc2.pdf)
 
-The model with the best score is determined for the given word.
+The model with the best score is determined for the given word. Five such words are tested.
 
 ### Part 3
 
-
+Optimal models are determined for all words in the training set. The student implements the "recognize" function in [my_recognizer.py](my_recognizer.py), which collects the best guess word and associated probabilities for every sequence of x/y coordinates in a test set of sentences. Multiple combinations of Selector type and feature set are tested; three of them are documented in the notebook.  A Word Error Rate (WER) for each combination. Conclusions are drawn.
 
 A description of the files in this repository follows:
 
@@ -47,3 +52,5 @@ Notes | File | Usage
 
 
 ## Results
+
+It seemed that feature engineering had a greater impact than which selector was used, based on WER. For a given feature set the different selectors had similar WERs. The "n2g_dn2g" feature set that combined both spatial and temporal information performed the best, with a WER of slightly less than 50%. The high WER is attributed to the insufficiency of HMMs to capture all the characteristics of signs as they occur in sentences. An optional fourth section suggests the use of [statistical language models](https://en.wikipedia.org/wiki/Language_model) to improve the results.
